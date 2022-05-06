@@ -33,29 +33,29 @@ fig = plt.figure(figsize=(50, 20))
 data.plot.box(title='Boxplot of Happiness Features', rot=90)
 plt.show()
 
-# sns.boxplot(data["gnancies"])
-# plt.show()
-#
-# sns.boxplot(data["glucose"])
-# plt.show()
-#
-# sns.boxplot(data["diastolic"])
-# plt.show()
-#
-# sns.boxplot(data["triceps"])
-# plt.show()
-#
-# sns.boxplot(data["insulin"])
-# plt.show()
-#
-# sns.boxplot(data["bmi"])
-# plt.show()
-#
-# sns.boxplot(data["dpf"])
-# plt.show()
-#
-# sns.boxplot(data["age"])
-# plt.show()
+sns.boxplot(data["gnancies"])
+plt.show()
+
+sns.boxplot(data["glucose"])
+plt.show()
+
+sns.boxplot(data["diastolic"])
+plt.show()
+
+sns.boxplot(data["triceps"])
+plt.show()
+
+sns.boxplot(data["insulin"])
+plt.show()
+
+sns.boxplot(data["bmi"])
+plt.show()
+
+sns.boxplot(data["dpf"])
+plt.show()
+
+sns.boxplot(data["age"])
+plt.show()
 
 print(np.where(data['gnancies'] > 12.5))
 print(np.where(data['glucose'] < 50))
@@ -114,6 +114,10 @@ data.drop([11, 14, 40, 110,
            506, 515, 548, 598,
            611, 646, 647, 660, 670, 696, 702,
            708, 716, 728, 749], inplace=True)
+
+
+print(np.where(data['age'] > 55))
+print(np.where(data['gnancies'] > 10))
 
 sns.boxplot(data["gnancies"])
 plt.show()
@@ -175,7 +179,7 @@ svm = SVC()
 svm.fit(inputs_train, targets_train)
 
 #
-# test the three models with the test data and print their accuracy scores
+# test the models with the test data and print their accuracy scores
 print('knn: {}'.format(knn.score(inputs_test, targets_test)))
 print('rf: {}'.format(rf.score(inputs_test, targets_test)))
 print('lr: {}'.format(lr.score(inputs_test, targets_test)))
